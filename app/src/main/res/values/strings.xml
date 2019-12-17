@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">RappDicionario</string>
+    <string name="app_name">RAPP Dic</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_inicio">Inicial</string>
+    <string name="menu_categorias">Categorias</string>
+    <string name="txt_hint_pesquisa">O que deseja pesquisar?</string>
+    <string name="txt_categoria">Categoria</string>
 </resources>

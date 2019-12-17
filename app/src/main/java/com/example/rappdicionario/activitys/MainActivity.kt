@@ -1,7 +1,8 @@
-package com.example.rappdicionario
+package com.example.rappdicionario.activitys
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.rappdicionario.R
 
 class MainActivity : AppCompatActivity() {
 
