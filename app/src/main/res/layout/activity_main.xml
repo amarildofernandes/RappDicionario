@@ -7,7 +7,7 @@
     tools:context=".activitys.MainActivity">
 
     <fragment
-        android:id="@+id/fragmentConteinerSessao_"
+        android:id="@+id/fragmentConteinerSplash"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,8 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/navegacao"
-        tools:layout="@layout/fragment_host" />
+        app:navGraph="@navigation/navegacao" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

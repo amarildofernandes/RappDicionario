@@ -20,5 +20,37 @@
         android:id="@+id/homeHostFragment"
         android:name="com.example.rappdicionario.fragmentos.fragmentoHost.HomeHostFragment"
         android:label="fragment_home_host"
-        tools:layout="@layout/fragment_home_host" />
+        tools:layout="@layout/fragment_home_host" >
+        <action
+            android:id="@+id/action_homeHostFragment_to_descricaoPalavraFragment"
+            app:destination="@id/descricaoPalavraFragment" />
+        <action
+            android:id="@+id/action_homeHostFragment_to_listaCategoriasSubFragment"
+            app:destination="@id/listaCategoriasSubFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/descricaoPalavraFragment"
+        android:name="com.example.rappdicionario.DescricaoPalavraFragment"
+        android:label="fragment_descricao_palavra"
+        tools:layout="@layout/fragment_descricao_palavra" >
+        <argument
+            android:name="palavra"
+            app:argType="string" />
+        <argument
+            android:name="categoria"
+            app:argType="string" />
+        <argument android:name="foto"
+            app:argType="string" />
+        <argument android:name="descricao"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaCategoriasSubFragment"
+        android:name="com.example.rappdicionario.ListaCategoriasSubFragment"
+        android:label="fragment_lista_categorias_sub"
+        tools:layout="@layout/fragment_lista_categorias_sub" >
+        <argument
+            android:name="categoriaSub"
+            app:argType="string" />
+    </fragment>
 </navigation>

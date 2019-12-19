@@ -8,10 +8,18 @@ import android.widget.BaseExpandableListAdapter
 import android.widget.ExpandableListView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
 import com.example.rappdicionario.R
+import com.example.rappdicionario.fragmentos.fragmentoHost.HomeHostFragmentDirections
 
-class ExpandableListViewAdapter(var context: Context ,var expandableListView: ExpandableListView,var titulo : MutableList<String>,
-                                var corpo:MutableList<MutableList<String>>) :BaseExpandableListAdapter() {
+class ExpandableListViewAdapter(
+    var context: Context,
+    var expandableListView: ExpandableListView,
+    var titulo: MutableList<String>,
+    var corpo: MutableList<MutableList<String>>,
+    val activity: FragmentActivity?
+) :BaseExpandableListAdapter() {
 
     override fun getGroup(position: Int): String{
         return titulo[position]
@@ -69,6 +77,10 @@ class ExpandableListViewAdapter(var context: Context ,var expandableListView: Ex
         val titulo_group = convertV?.findViewById<TextView>(R.id.tv_title)
         titulo_group?.setOnClickListener {
             Toast.makeText(context,getChild(groupPosition,childPosition),Toast.LENGTH_SHORT).show()
+            activity?.findNavController(R.id.fragmentConteinerSplash)?.navigate(
+                HomeHostFragmentDirections
+                    .actionHomeHostFragmentToListaCategoriasSubFragment(getChild(groupPosition,childPosition))
+            )
         }
         titulo_group?.text = getChild(groupPosition,childPosition)
         return convertV
