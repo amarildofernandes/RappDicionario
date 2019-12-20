@@ -5,9 +5,9 @@
         android:title="@string/menu_inicio"
         android:icon="@drawable/ic_home_black_24dp" />
 
-    <item
+    <!--<item
         android:id="@+id/categoriasFragment"
         android:title="@string/menu_categorias"
-        android:icon="@drawable/ic_menu_black_24dp" />
+        android:icon="@drawable/ic_menu_black_24dp" />-->
 
 </menu>

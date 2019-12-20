@@ -1,6 +1,5 @@
 package com.example.rappdicionario
 
-
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -69,19 +68,9 @@ class CategoriasFragment : Fragment() {
                     itensLista.add(s4)
                     itensLista.add(s4)
 
-                    expandableListView.setAdapter(ExpandableListViewAdapter(view.context,expandableListView,titulo,itensLista,activity))
+                    //expandableListView.setAdapter(ExpandableListViewAdapter(view.context,expandableListView,titulo,itensLista,activity))
                 }
             }
         })
-
     }
-
-
-    fun valoresEstaticos(){
-
-
-
-    }
-
-
 }

@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity() {
         palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Culturas Permanentes",
             "Estrume ou esterco são designações dadas ao material orgânico em avançado estado de" +
                     " decomposição utilizado como fertilizante e condicionador dos solos para melhoria das práticas agrícolas." +
-                    "\n" ,uri,"•Estrume"))
+                    "\n" ,uri,"Estrume"))
 
         palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Adubo Químico",
             "São substâncias utilizadas na actividade agrícola com objectivo de se elevar" +
@@ -138,9 +138,67 @@ class MainActivity : AppCompatActivity() {
                     "2. Aldeia ou quinta situada num terreno com palmeiras.\n" +
                     "\n" ,uri,"Palmar"))
 
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Culturas Temporáis",
+            "Cereais são as plantas cultivadas por seus frutos (do tipo cariopse) comestíveis, normalmente" +
+                    " chamados grãos e são na maior parte gramíneas, compondo uma família com mais de 6 mil espécies. \n " +
+                    "Os cereais são produzidos em todo mundo em maiores quantidades do que qualquer outro tipo de produto e são os " +
+                    "que mais fornecem calorias ao ser humano." ,uri,"Cereais"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Culturas Temporáis",
+            "Cereais são as plantas cultivadas por seus frutos (do tipo cariopse) comestíveis, normalmente" +
+                    " chamados grãos e são na maior parte gramíneas, compondo uma família com mais de 6 mil espécies. \n " +
+                    "Os cereais são produzidos em todo mundo em maiores quantidades do que qualquer outro tipo de produto e são os " +
+                    "que mais fornecem calorias ao ser humano." ,uri,"Fertilizantes"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Culturas Temporáis",
+            "Um hectare, representado pelo símbolo ha[1] (conhecido também como hectômetro/hectómetro " +
+                    "quadrado [hm²]), é uma unidade de medida de área equivalente a 100 (cem) ares ou a 10 000 " +
+                    "(dez mil) metros quadrados." ,uri,"Hectares"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Actividade Agricola",
+            "A horticultura é o ramo da agricultura que estuda as técnicas de produção e aproveitamento" +
+                    " dos frutos, hortaliças, árvores, arbustos e flores. Inclui também a jardinagem." ,uri,"Horticultura"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Actividade Agricola",
+            "São grãos contidos em vagens ricas em tecido fibroso." +
+                    "\n Algumas espécies podem ser consumidas quando ainda verdes (ervilhas" +
+                    " e vagens). Os grãos apresentam uma envoltura de celulose, que representa 2" +
+                    " a 5% e contêm no seu interior 50% de amido e 23% de proteínas." ,uri,"Leguminosas"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Actividade Agricola",
+            "São vegetais que possuem óleos e gorduras que podem ser extraídos através de processos " +
+                    "adequados. Os óleos extraídos são substâncias insolúveis em água (hidrofóbicas), " +
+                       "que na temperatura de 20° C exibem aspecto líquido. As gorduras distinguem-se dos" +
+                    " óleos por apresentar um aspecto sólido à temperatura de 20°" ,uri,"Oleaginosas"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Actividade Agricola",
+            "É uma porção de terra sob um único regime de posse, completamente cercada por outras terras," +
+                    " curso de água, estradas, florestas ou outros elementos que não fazem parte da exploração agro-pecuária," +
+                    " ou que fazem parte dela sob outro regime de posse." ,uri,"Parcela"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Actividade Agricola",
+            "Os pesticidas ou praguicidas são todas as substâncias ou " +
+                    "misturas que têm, como objetivo, impedir, destruir, repelir ou mitigar " +
+                    "qualquer praga. Um pesticida pode ser uma substância química ou um agente biológico " +
+                    "(tal como um vírus ou bactéria) que é lançado de encontro às pragas que estiverem destruindo " +
+                    "uma plantação, disseminando doenças, incomodando pessoas etc. É utilizada em diversas formas de " +
+                    "seres vivos, tais como: insetos, erva daninha, moluscos, pássaros, mamíferos, peixes, nematelmintos e " +
+                    "micróbios. Não são necessariamente venenos, porém, quase sempre, são tóxicos ao ser humano." ,uri,"Pesticida"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Actividade Agricola",
+            "Tubérculos e raizes são diferentes de raízes tuberosas como a batata doce, a beterraba, a cenoura ou " +
+                    "a mandioca, que armazenam seus nutrientes na própria raiz, muito mais desenvolvida que a dos " +
+                    "tubérculos. Também se diferenciam de bulbos como cebolas e alho, que apesar de usarem parte do " +
+                    "caule, também usam folhas modificadas, conhecidas como catafilos para armazenar nutrientes." ,uri,"Raízes e Tubérculos"))
+
+        palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Actividade Agricola",
+            "é uma operação cultural que consiste em remover a camadasuperficial da terra eliminar as ervas daninhas para permitir um bom" +
+                    "desenvolvimento das plantas, evitando assim a incidência de pragas e doenças." ,uri,"Sacha"))
+
         /*palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Macaco", "XXXXXXXXX",12,"Macaco"))
         palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Rapousa", "XXXXXXXXX",12,"Rapousa"))
         palavraViewModel.insertUsuario(Palavra(UUID.randomUUID().toString(),"Lagostin", "XXXXXXXXX",12,"Lagostin")) */
+
     }
 
     private fun inserirCategoriaBd(categoriaViewModel: CategoriaViewModel) {
@@ -149,6 +207,7 @@ class MainActivity : AppCompatActivity() {
                     " depende do ciclo da natureza, que ocorre em diferentes fases ou estádios fenológicos de desenvolvimento" +
                     " da planta, à realização desta produção, bem como as actividades exercidas pelo homem que se enquadram num" +
                     " âmbito da produção ou que sejam apoiadas numa exploração."))
+
         /*categoriaViewModel.insertCategoria(Categoria(UUID.randomUUID().toString(),"Animais", "Animais"))
         categoriaViewModel.insertCategoria(Categoria(UUID.randomUUID().toString(),"Instrumentos", "Instrumentos"))
         categoriaViewModel.insertCategoria(Categoria(UUID.randomUUID().toString(),"Tipos de Peixes", "Peixe"))
