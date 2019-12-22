@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".TodasPalavrasFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerToasPalavras"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+
+    <com.trendyol.bubblescrollbarlib.BubbleScrollBar
+        android:id="@+id/bubble_scroll_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:orientation="vertical"
+        app:bubbleBackground="@drawable/my_scroll"
+        app:bubbleElevation="6dp"
+        app:bubbleHeight="50dp"
+        app:bubbleMargin="4dp"
+        app:bubbleMinWidth="@dimen/tam50"
+        app:bubblePadding="4dp"
+        app:bubbleTextColor="@color/white"
+        app:bubbleTextSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerToasPalavras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineDireita"
+        app:layout_constraintTop_toTopOf="@+id/recyclerToasPalavras"
+        app:scrollbarBackground="@color/colorRapp"
+        app:thumbBackground="@color/colorRapp" />
+
+</FrameLayout>

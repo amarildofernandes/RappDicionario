@@ -9,10 +9,19 @@
         android:id="@+id/inicialDicFragment"
         android:name="com.example.rappdicionario.InicialDicFragment"
         android:label="fragment_inicial_dic"
-        tools:layout="@layout/fragment_inicial_dic" />
+        tools:layout="@layout/fragment_inicial_dic" >
+        <action
+            android:id="@+id/action_inicialDicFragment_to_todasPalavrasFragment"
+            app:destination="@id/todasPalavrasFragment" />
+    </fragment>
     <fragment
         android:id="@+id/categoriasFragment"
         android:name="com.example.rappdicionario.CategoriasFragment"
         android:label="fragment_categorias"
         tools:layout="@layout/fragment_categorias" />
+    <fragment
+        android:id="@+id/todasPalavrasFragment"
+        android:name="com.example.rappdicionario.TodasPalavrasFragment"
+        android:label="fragment_todas_palavras"
+        tools:layout="@layout/fragment_todas_palavras" />
 </navigation>

@@ -87,6 +87,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
 
+    //BubbleScrollBar
+
+    implementation "com.github.Trendyol:BubbleScrollBar:0.1"
+    implementation 'com.futuremind.recyclerfastscroll:fastscroll:0.2.5'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'

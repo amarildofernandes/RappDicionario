@@ -8,7 +8,7 @@ class Palavra (
         @field:PrimaryKey
         var idPalavras: String,
         var categoria: String,
+        val palavra: String,
         val descricao:String,
-        val imagem:String,
-        val palavra: String
+        val imagem:String
 )

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TodasPalavrasFragment">
+
+
+    <ImageView
+        android:id="@+id/ic_voltar_todas_palavras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_az"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_circulo_verde"
+        android:gravity="center"
+        android:text="A"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_resultados"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDireita"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_resultados"
+        app:layout_constraintTop_toBottomOf="@+id/ic_voltar_todas_palavras" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerToasPalavras"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDireita"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_az" />
+
+    <!--<com.trendyol.bubblescrollbarlib.BubbleScrollBar
+        android:id="@+id/bubble_scroll_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
+        android:orientation="vertical"
+        app:bubbleBackground="@drawable/my_scroll"
+        app:bubbleElevation="6dp"
+        app:bubbleHeight="50dp"
+        app:bubbleMargin="4dp"
+        app:bubbleMinWidth="@dimen/tam50"
+        app:bubblePadding="4dp"
+        app:bubbleTextColor="@color/white"
+        app:bubbleTextSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerToasPalavras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineDireita"
+        app:layout_constraintTop_toTopOf="@+id/recyclerToasPalavras"
+        app:scrollbarBackground="@color/colorRapp"
+        app:thumbBackground="@color/colorRapp" /> -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDireita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

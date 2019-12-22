@@ -3,5 +3,6 @@
     <dimen name="tam200">200dp</dimen>
     <dimen name="tam100">100dp</dimen>
     <dimen name="tam5">5dp</dimen>
+    <dimen name="tam50">50dp</dimen>
     <dimen name="tam10">10dp</dimen>
 </resources>

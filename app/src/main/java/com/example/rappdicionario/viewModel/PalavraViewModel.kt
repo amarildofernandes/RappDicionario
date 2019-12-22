@@ -19,7 +19,7 @@ class PalavraViewModel(application:Application):AndroidViewModel(application) {
         palavrasLista = palavraDao.listarPalavras
     }
 
-    fun insertUsuario(palavra:Palavra){
+    fun inserirPalavra(palavra:Palavra){
         InsertAsyncTask(palavraDao).execute(palavra)
     }
 

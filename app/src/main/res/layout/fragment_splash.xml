@@ -10,10 +10,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="@dimen/tam200"
+        android:layout_width="0dp"
         android:layout_height="@dimen/tam200"
-        android:src="@drawable/inelogo"
+        android:src="@drawable/ine_logo"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w,16:9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

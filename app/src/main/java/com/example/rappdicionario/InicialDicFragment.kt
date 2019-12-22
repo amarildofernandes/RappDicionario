@@ -4,6 +4,7 @@ package com.example.rappdicionario
 import android.content.Context
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Log
 import android.view.KeyEvent
@@ -30,8 +31,6 @@ import proitdevelopers.com.bloomberg.viewModel.PalavraViewModel
 
 class InicialDicFragment : Fragment() {
 
-    var pesquisaRes: MutableList<String> = mutableListOf()
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         palavraViewModel = ViewModelProviders.of(this).get(PalavraViewModel::class.java)
@@ -45,12 +44,13 @@ class InicialDicFragment : Fragment() {
        edit_txt_pesquisa?.setOnKeyListener { v, keyCode, event ->
             if((event.action == KeyEvent.ACTION_DOWN)
                 && (event.keyCode == KeyEvent.KEYCODE_ENTER)){
-                activity?.let { it1 -> esconderTeclado(it1) }
-                activity?.findNavController(R.id.fragmentConteinerSplash)?.navigate(
-                    HomeHostFragmentDirections
-                        .actionHomeHostFragmentToDescricaoPalavraFragment("","","","")
-                )
-                Toast.makeText(view.context,"Enter",Toast.LENGTH_SHORT).show()
+                if (!TextUtils.isEmpty(edit_txt_pesquisa.text.toString())){
+                    activity?.let { it1 -> esconderTeclado(it1) }
+                    activity?.findNavController(R.id.fragmentConteinerSplash)?.navigate(
+                        HomeHostFragmentDirections
+                            .actionHomeHostFragmentToPalavrasFiltradasFragment(edit_txt_pesquisa.text.toString())
+                    )
+                }
                 return@setOnKeyListener true
             }
             false
@@ -58,28 +58,24 @@ class InicialDicFragment : Fragment() {
 
         edit_txt_pesquisa.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                activity?.let { it1 -> esconderTeclado(it1) }
 
-                activity?.findNavController(R.id.fragmentConteinerSplash)?.navigate(
-                    HomeHostFragmentDirections
-                        .actionHomeHostFragmentToDescricaoPalavraFragment("","","","")
-                )
-
-                Toast.makeText(view.context,"Pesquisou",Toast.LENGTH_SHORT).show()
+                if (!TextUtils.isEmpty(edit_txt_pesquisa.text.toString())){
+                    activity?.let { it1 -> esconderTeclado(it1) }
+                    activity?.findNavController(R.id.fragmentConteinerSplash)?.navigate(
+                        HomeHostFragmentDirections
+                            .actionHomeHostFragmentToPalavrasFiltradasFragment(edit_txt_pesquisa.text.toString())
+                    )
+                }
                 return@OnEditorActionListener true
             }
             false
         })
 
-        edit_txt_pesquisa.setImeActionLabel("Pesquisar",KeyEvent.KEYCODE_ENTER)
-
         edit_txt_pesquisa.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                Log.i("mudanca","")
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                Log.i("mudanca","")
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -91,12 +87,20 @@ class InicialDicFragment : Fragment() {
                 })
             }
         })
+
+        tv_palavras_a_z.setOnClickListener {
+            activity?.let { it1 -> esconderTeclado(it1) }
+            activity?.findNavController(R.id.fragmentConteinerSessao_)?.navigate(
+                InicialDicFragmentDirections
+                    .actionInicialDicFragmentToTodasPalavrasFragment()
+            )
+        }
     }
 
     private fun confRealTimeRecycler(context: Context,pesqisarPor:List<Palavra>){
         val layoutManager = LinearLayoutManager(context)
         layoutManager.orientation = RecyclerView.VERTICAL
-        val adapterConfAtualidade = ResultadoAdapeter(context,activity)
+        val adapterConfAtualidade = ResultadoAdapeter(context,activity,true)
         recyclerResultado.layoutManager = layoutManager
         recyclerResultado.adapter = adapterConfAtualidade
         adapterConfAtualidade.setNoticias(pesqisarPor)

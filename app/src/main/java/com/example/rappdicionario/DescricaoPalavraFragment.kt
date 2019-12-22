@@ -1,14 +1,16 @@
 package com.example.rappdicionario
 
 
-import android.net.Uri
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_descricao_palavra.*
+import proitappsolutions.com.rumosstore.adapter.RecyclerImgAdapeter
 
 class DescricaoPalavraFragment : Fragment() {
 
@@ -29,10 +31,24 @@ class DescricaoPalavraFragment : Fragment() {
             categoria_tv.text = categoria
             descricao_txt.text = descricao
             legenda_tv.text = palavra
-            Glide.with(view.context).load(Uri.parse(foto)).into(img_result)
+            val fotos = foto.split(",")
+            if (fotos[0].length>2){
+                confRealTimeRecycler(view.context,fotos)
+            } else{
+                recyclerView_imagens.visibility = View.GONE
+                legenda_tv.visibility = View.GONE
+            }
         }
         img_btn_voltar.setOnClickListener {  getFragmentManager()?.popBackStack() }
     }
 
+    private fun confRealTimeRecycler(context: Context, imagens:List<String>){
+        val layoutManager = LinearLayoutManager(context)
+        layoutManager.orientation = RecyclerView.VERTICAL
+        val adapterConfAtualidade = RecyclerImgAdapeter(context,activity)
+        recyclerView_imagens.layoutManager = layoutManager
+        recyclerView_imagens.adapter = adapterConfAtualidade
+        adapterConfAtualidade.setNoticias(imagens)
+    }
 
 }
