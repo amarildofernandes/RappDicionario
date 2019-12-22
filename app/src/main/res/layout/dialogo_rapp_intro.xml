@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:padding="4dp"
+    android:textAlignment="center">
 
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Recenseamento Agro – Pecuário e Pescas (RAPP 2019-2020) "
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,9 +27,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
         android:text="O Recenseamento Agro-pecuário e Pescas (RAPP) 2019-2020 é uma operação estatística e tem como objectivo fundamental obter indicadores essenciais que permitem conhecer a caracterização da estrutura agrária, pecuária e piscatória em Angola."
         android:textColor="#000000"
-        android:textSize="15sp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

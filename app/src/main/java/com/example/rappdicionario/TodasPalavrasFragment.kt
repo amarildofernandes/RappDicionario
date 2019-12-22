@@ -20,7 +20,6 @@ import proitdevelopers.com.bloomberg.viewModel.PalavraViewModel
 
 class TodasPalavrasFragment : Fragment() {
 
-    lateinit var layoutManager: LinearLayoutManager
     internal val palavrasColecti = mutableListOf<Palavra>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,7 +35,7 @@ class TodasPalavrasFragment : Fragment() {
 
         palavraViewModel.palavrasLista.observe(this@TodasPalavrasFragment, Observer { palavras ->
             palavras?.let {
-
+                tv_total_palavras.text = "${palavras.size} Palavras"
                 for (palavra in palavras){
                     palavrasColecti.add(palavra)
                 }

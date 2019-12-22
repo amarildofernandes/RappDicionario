@@ -1,19 +1,18 @@
 package com.example.rappdicionario
 
 
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -31,6 +30,8 @@ import proitdevelopers.com.bloomberg.viewModel.PalavraViewModel
 
 class InicialDicFragment : Fragment() {
 
+    var dialogRapp: Dialog? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         palavraViewModel = ViewModelProviders.of(this).get(PalavraViewModel::class.java)
@@ -40,7 +41,8 @@ class InicialDicFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        initDialogo(view)
+        img_rapp_logo.setOnClickListener { dialogRapp?.show() }
        edit_txt_pesquisa?.setOnKeyListener { v, keyCode, event ->
             if((event.action == KeyEvent.ACTION_DOWN)
                 && (event.keyCode == KeyEvent.KEYCODE_ENTER)){
@@ -104,5 +106,10 @@ class InicialDicFragment : Fragment() {
         recyclerResultado.layoutManager = layoutManager
         recyclerResultado.adapter = adapterConfAtualidade
         adapterConfAtualidade.setNoticias(pesqisarPor)
+    }
+
+    private fun initDialogo(view: View) {
+        dialogRapp = Dialog(view.context)
+        dialogRapp?.setContentView(R.layout.dialogo_rapp_intro)
     }
 }
